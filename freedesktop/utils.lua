@@ -7,14 +7,11 @@ local type = type
 local ipairs = ipairs
 local pairs = pairs
 
-local Gtk = require("lgi").Gtk
-
 module("freedesktop.utils")
 
 terminal = 'xterm'
 
 icon_theme = nil
-gtk_icon_theme = Gtk.IconTheme.get_default()
 
 all_icon_sizes = {
     '128x128',
@@ -66,14 +63,6 @@ function lookup_icon(arg)
         -- icons with absolute path and supported (AFAICT) formats
         return arg.icon
     else
-        local gtk_icon_info = Gtk.IconTheme.lookup_icon(gtk_icon_theme, arg.icon, 48, 0)
-        if gtk_icon_info then
-            filename = Gtk.IconInfo.get_filename(gtk_icon_info)
-            if filename then
-                return filename
-            end
-        end
-
         local icon_path = {}
         local icon_themes = {}
         local icon_theme_paths = {}
@@ -187,7 +176,7 @@ function parse_desktop_file(arg)
         local group = nil
 
         for line in io.lines(file) do
-            group = line:match("^%[([^%[%]%c]+)%]") or group
+            group = line:match("^%[([^%[%]%c]+)%]*(.-)%s*$") or group
             if group then
                 result[group] = check_nil(result[group], {})
 
@@ -196,7 +185,6 @@ function parse_desktop_file(arg)
                 end
             end
         end
-
         return result
     end
 

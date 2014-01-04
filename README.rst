@@ -12,16 +12,16 @@ Power themes for Awesome WM 3.5+
 :Source: https://github.com/copycat-killer/awesome-copycats
 
 Description
-==========
+===========
 
 A set of themes with the aim of making Awesome_ appearance awesome too!
 
 Notable features
 ================
 
-- Shadow widgets (*tell me only when you have to*)
+- Autohide widgets (*tell me only when you have to*)
 - Autostart applications
-- Fast mpd and volume shortcuts (first time you see this trick in Awesome)
+- Fast MPD and volume shortcuts (first time you see this trick in Awesome)
 - Other shortcuts for copying to the clipboard (goodbye clipboard managers!), toggle wiboxes, widgets popups, screenshots capture, moving and magnifying clients
 - Quake drop-down terminal
 - Calendar with current day highlighted and months switch with a click
@@ -45,15 +45,15 @@ Notable features
 Gallery
 =======
 
-**Multicolor** copycatted from tip_
+**Multicolor** inspired by tip_
 
 .. image:: http://dotshare.it/public/images/uploads/650.png
 
-**Powerarrow Darker** copycatted from romockee_ [port from v3.4]
+**Powerarrow Darker** copycatted from romockee_ [custom porting from v3.4]
 
 .. image:: http://dotshare.it/public/images/uploads/649.png
 
-**Steamburn** copycatted from ok100_ [port from dwm]
+**Steamburn** copycatted from ok100_ [porting from dwm]
 
 .. image:: http://dotshare.it/public/images/uploads/648.png
 
@@ -69,26 +69,28 @@ Gallery
 
 .. image:: http://dotshare.it/public/images/uploads/606.png
 
-**Holo** suggested by amouly_
+**Holo** requested by amouly_
 
 .. image:: http://dotshare.it/public/images/uploads/651.png
 
 **Copland** inspired by foozer_
 
-.. image:: http://dotshare.it/public/images/uploads/655.png 
+.. image:: http://dotshare.it/public/images/uploads/655.png
 
 Installation
 ============
 
-Using git: ::
+Using git you can have the full master branch: ::
 
     git clone https://github.com/copycat-killer/awesome-copycats.git
     mv -u awesome-copycats ~/.config/awesome
-    cd ~/.config/awesome/lain
+    cd ~/.config/awesome
     git submodule init
     git submodule update
 
-Otherwise download this two archives (1_ and 2_), extract the first one, extract the second one into the first one, and put the contents of the first one into your Awesome directory.
+This may take some time.
+
+Otherwise, download the latest two masters of ``awesome-copycats`` and ``lain`` (1_ and 2_), extract the first one, extract the second one into the first one, and put the contents of the first one into your Awesome directory.
 
 Usage
 =====
@@ -103,7 +105,7 @@ then customize your ``rc.lua`` and restart Awesome (``Mod4 + ctrl + r``).
 Notes
 =====
 
-Be sure to have Lua 5.2+, Lua-lgi, and latest version of Awesome.
+Be sure to have the latest versions of Lua, Lua-lgi, and Awesome.
 
 Complements are provided by lain_: be sure to meet its dependencies_.
 
@@ -111,15 +113,17 @@ Fonts are Terminus_ (Multicolor, Powerarrow Darker) and Tamsyn_ (other ones).
 
 Every theme has a colorscheme_.
 
-Blackburn and Dremora use Icons_, be sure to have bitmaps enabled if running under Debian_ or Ubuntu_.
+Blackburn and Dremora use Icons_: be sure to have bitmaps enabled if running under Debian_ or Ubuntu_.
 
-Freedesktop uses ``/etc/mime.types``, so be sure to have mime-types support installed.
+Freedesktop uses ``/etc/mime.types``, so be sure to have MIME support installed.
 
 Eminent, freedesktop and scratchdrop are third-party softwares: **rely on their creators if they cause you issues**.
 
+Feel free to email me if you have any request.
+
 .. _BY-NC-SA: http://creativecommons.org/licenses/by-nc-sa/3.0/
 .. _Awesome: http://awesome.naquadah.org/
-.. _tip: http://theimmortalphoenix.deviantart.com/art/Full-Color-Awesome-340997258
+.. _tip: https://bbs.archlinux.org/profile.php?id=51327
 .. _romockee: https://github.com/romockee/powerarrow-dark
 .. _ok100: http://ok100.deviantart.com/art/DWM-January-2013-348656846
 .. _amouly: https://bbs.archlinux.org/viewtopic.php?pid=1307158#p1307158

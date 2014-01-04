@@ -58,7 +58,7 @@ run_once("compton")
 --os.setlocale(os.getenv("LANG"))
 
 -- beautiful init
-beautiful.init(awful.util.getdir("config") .. "/themes/holo/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/holo/theme.lua")
 
 -- common
 modkey     = "Mod4"
@@ -150,7 +150,7 @@ mailwidget = lain.widgets.imap({
             count = mailcount .. " "
         end
 
-        widget:set_markup(markup(gray, mail) .. markup(white, count))
+        widget:set_markup(markup(blue, mail) .. markup(white, count))
     end
 })
 ]]
@@ -386,6 +386,7 @@ for s = 1, screen.count() do
     left_layout:add(mytaglist[s])
     left_layout:add(spr_small)
     left_layout:add(mylayoutbox[s])
+    left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the upper right
     local right_layout = wibox.layout.fixed.horizontal()
