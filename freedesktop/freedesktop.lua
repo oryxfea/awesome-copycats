@@ -22,12 +22,18 @@ myawesomemenu = {
  { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'gtk-quit' }) }
 }
 
+mypowermenu = {
+ { "shutdown", terminal .. " -e shutdown -h now", freedesktop.utils.lookup_icon({ icon = 'shutdown' }) },
+ { "reboot", terminal .. " -e reboot", freedesktop.utils.lookup_icon({ icon = 'reboot' }) },
+}
+
 for s = 1, screen.count() do
     --freedesktop.desktop.add_application_icons({screen = s, showlabels = true})
     --freedesktop.desktop.add_dirs_and_file_icons({screen = s, showlabels = true})
     freedesktop.desktop.add_desktop_icons({screen = s, showlabels = true})
 end
 
+table.insert(menu_items, { "Power", mypowermenu, freedesktop.utils.lookup_icon({ icon = 'power'})})
 table.insert(menu_items, { "awesome", myawesomemenu, beautiful.awesome_icon })
 table.insert(menu_items, { "open terminal", terminal, freedesktop.utils.lookup_icon({icon = 'terminal'}) })
 -- table.insert(menu_items, { "Debian", debian.menu.Debian_menu.Debian, freedesktop.utils.lookup_icon({ icon = 'debian-logo' }) })
