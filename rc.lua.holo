@@ -141,16 +141,16 @@ mailwidget = lain.widgets.imap({
     mail     = "mail",
     password = "keyring get mail",
     settings = function()
-        mail_notification_preset.fg = white
+        mail_notification_preset.fg = "#FFFFFF"
         mail  = ""
         count = ""
 
         if mailcount > 0 then
-            mail = "Arch "
+            mail = "Mail "
             count = mailcount .. " "
         end
 
-        widget:set_markup(markup(blue, mail) .. markup(white, count))
+        widget:set_markup(markup(blue, mail) .. markup("#FFFFFF", count))
     end
 })
 ]]
